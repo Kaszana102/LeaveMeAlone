@@ -67,6 +67,7 @@ public class Wall : Signalable
 
     void ChangeOpeness()
     {
+        opened = !opened;
         if (opened)
         {
             Open();
@@ -74,8 +75,7 @@ public class Wall : Signalable
         else
         {
             Close();
-        }
-        opened = !opened;
+        }        
 
     }
 }

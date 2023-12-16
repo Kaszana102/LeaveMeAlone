@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System;
 
 [CustomEditor(typeof(Wall))]
+[CanEditMultipleObjects]
 public class WallLengthShower : Editor
 {
     private SerializedProperty wallLength;
@@ -11,7 +13,11 @@ public class WallLengthShower : Editor
 
     protected void OnEnable()
     {
-        wallLength = serializedObject.FindProperty("wallLength");        
+        wallLength = serializedObject.FindProperty("wallLength");
+    }
+
+    private void OnDisable()
+    {
     }
 
     void OnSceneGUI()
@@ -27,13 +33,12 @@ public class WallLengthShower : Editor
         
         Handles.color = Color.yellow;
 
-        float rectWidth = 0.25f;
+        float rectWidth = 15f;
 
-        Rect rect = new Rect(t.transform.position.x - rectWidth, t.transform.position.y,
-            2 * rectWidth, wallLength.floatValue);
-
-        Handles.DrawSolidRectangleWithOutline(rect, Color.white, Color.black);
-
-          
+        Handles.DrawLine(t.transform.position,
+                t.transform.position + t.transform.up * wallLength.floatValue, rectWidth);
     }
 }
+
+
+
