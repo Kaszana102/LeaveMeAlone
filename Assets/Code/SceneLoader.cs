@@ -15,4 +15,14 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
+
+    public static void CloseApp()
+    {
+# if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+
+    }
 }
