@@ -11,15 +11,12 @@ public class Wall : Signalable
         SCALING
     }
 
-    [SerializeField]
-    float openingSpeed = 0.25f;
-
-    bool opened = false;
+    [SerializeField] float openingSpeed = 0.25f;
+    [SerializeField] bool opened = false;
     [SerializeField] float wallLength = 2f;
-    GameObject wall;
+    [SerializeField] ActionType actionType = ActionType.MOVING;
 
-    ActionType actionType = ActionType.MOVING;
-    
+    GameObject wall;
 
     public override void ReceiveSignal()
     {
