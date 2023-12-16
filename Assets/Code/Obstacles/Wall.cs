@@ -18,7 +18,8 @@ public class Wall : Signalable
     [SerializeField] SpriteRenderer rend;
 
     GameObject wall;
-
+    AudioSource audio;
+    [SerializeField] AudioClip openSound, closeSound;
     public override void ReceiveSignal()
     {
         ChangeOpeness();
@@ -27,6 +28,7 @@ public class Wall : Signalable
     private void Start()
     {
         wall = transform.GetChild(0).gameObject;
+        audio = gameObject.AddComponent<AudioSource>();        
 
         rend.size = new Vector2(1, wallLength);
 
@@ -43,7 +45,7 @@ public class Wall : Signalable
     }
 
     void Open()
-    {
+    {        
         switch (actionType)
         {
             case ActionType.MOVING:
@@ -57,7 +59,7 @@ public class Wall : Signalable
     }
 
     void Close()
-    {
+    {        
         switch (actionType)
         {
             case ActionType.MOVING:
@@ -75,10 +77,12 @@ public class Wall : Signalable
         opened = !opened;
         if (opened)
         {
+            audio.PlayOneShot(openSound, 0.2f);
             Open();
         }
         else
         {
+            audio.PlayOneShot(closeSound, .2f);
             Close();
         }        
 

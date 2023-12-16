@@ -110,7 +110,7 @@ public class Aloner : MonoBehaviour
                 //move to it
                 RunKeepDirection();
 
-                if (StickingToWall())
+                if (StickingToWall() && !GoingDown(targetPos))
                 {
                     Jump();
                 }
@@ -203,6 +203,11 @@ public class Aloner : MonoBehaviour
         return hitRight.collider != null || hitLeft.collider !=null;
     }
 
+    bool GoingDown(Vector3 targetPos)
+    {
+        return targetPos.y < transform.position.y;
+        
+    }
     void GoRight()
     {
         contr.Run(true);        

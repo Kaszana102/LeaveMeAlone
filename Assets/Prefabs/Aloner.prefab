@@ -632,6 +632,7 @@ GameObject:
   - component: {fileID: 6435755167659575530}
   - component: {fileID: 7648383925035010446}
   - component: {fileID: 9138481993691944673}
+  - component: {fileID: 1127748748886750624}
   m_Layer: 6
   m_Name: Aloner
   m_TagString: Aloner
@@ -789,6 +790,21 @@ MonoBehaviour:
   displStick: 0.3
   displMove: 0.7
   topSpeed: 20
+--- !u!114 &1127748748886750624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866560052311242561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37425c08d581ca443a3bcc9e00467389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jump: {fileID: 8300000, guid: 41f1121fb2b2d4d499de1325d3046476, type: 3}
+  run: {fileID: 8300000, guid: c741878cc0b585f4f8c8efae90ae9b76, type: 3}
+  landing: {fileID: 8300000, guid: c035f6cc216688749aedcf6e429afce9, type: 3}
 --- !u!1 &9034478035257749437
 GameObject:
   m_ObjectHideFlags: 0

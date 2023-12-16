@@ -133,8 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698ad4da9d83a1a48b013d11b5761af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signalables:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  signalables: []
   color: {r: 1, g: 0.25, b: 0.25, a: 1}
+  signalSound: {fileID: 8300000, guid: 1b91433b4cd0fe84786467601a34d719, type: 3}

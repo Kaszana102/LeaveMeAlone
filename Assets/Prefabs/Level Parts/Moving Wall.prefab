@@ -180,6 +180,8 @@ MonoBehaviour:
   wallLength: 2
   actionType: 0
   rend: {fileID: 2950819816337242020}
+  openSound: {fileID: 8300000, guid: fae045863335ef34682c3ca99d029bb6, type: 3}
+  closeSound: {fileID: 8300000, guid: 601c392be93b47d43b7a85605f99c0ad, type: 3}
 --- !u!1 &4165581270173079125
 GameObject:
   m_ObjectHideFlags: 0
