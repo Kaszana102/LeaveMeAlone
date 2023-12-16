@@ -121,7 +121,7 @@ public class CharacterControler : MonoBehaviour
 
 
         //Buffered inputs
-        if (_jumpBufferTimer > 0 && state == States.ground)
+        if (_jumpBufferTimer > 0 && (state == States.ground || state == States.wall))
             Jump();
     }
 
