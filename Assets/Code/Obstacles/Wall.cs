@@ -32,11 +32,13 @@ public class Wall : Signalable
 
         if (opened)
         {
-            wall.transform.localPosition = new Vector3(0, wallLength / 2,0);
+            //   wall.transform.localPosition = new Vector3(0, wallLength / 2,0);
+            Open();
         }
         else
         {
-            wall.transform.localPosition = new Vector3(0, -wallLength / 2, 0);
+            Close();
+           // wall.transform.localPosition = new Vector3(0, -wallLength / 2, 0);
         }
     }
 
@@ -48,6 +50,7 @@ public class Wall : Signalable
                 wall.transform.DOLocalMoveY(wallLength / 2, openingSpeed) ;
                 break;
             case ActionType.SCALING:
+                wall.transform.DOLocalMoveY(wallLength / 2, openingSpeed);
                 wall.transform.DOScaleY(1, openingSpeed);
                 break;
         }
@@ -61,6 +64,7 @@ public class Wall : Signalable
                 wall.transform.DOLocalMoveY(-wallLength / 2, openingSpeed);
                 break;
             case ActionType.SCALING:
+                wall.transform.DOLocalMoveY(0, openingSpeed);
                 wall.transform.DOScaleY(0, openingSpeed);
                 break;
         }

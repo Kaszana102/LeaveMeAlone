@@ -3957,6 +3957,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4587037684327909821, guid: f46a4f6c6c697aa449bae2bf348e16d5, type: 3}
   m_PrefabInstance: {fileID: 756355433}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &756355435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6711738987394516296, guid: f46a4f6c6c697aa449bae2bf348e16d5, type: 3}
+  m_PrefabInstance: {fileID: 756355433}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d0b03fd01e82c4f907ba4433101b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &783330695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7151,6 +7162,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2819325601388030417, guid: e8000f445d734064baffabaf21b9d70e, type: 3}
+      propertyPath: signalables.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819325601388030417, guid: e8000f445d734064baffabaf21b9d70e, type: 3}
+      propertyPath: signalables.Array.data[0]
+      value: 
+      objectReference: {fileID: 756355435}
+    - target: {fileID: 2819325601388030417, guid: e8000f445d734064baffabaf21b9d70e, type: 3}
+      propertyPath: signalables.Array.data[1]
+      value: 
+      objectReference: {fileID: 756355435}
     - target: {fileID: 9191683096888272447, guid: e8000f445d734064baffabaf21b9d70e, type: 3}
       propertyPath: m_Name
       value: Button (6)
