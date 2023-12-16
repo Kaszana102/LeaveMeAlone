@@ -15,6 +15,7 @@ public class Wall : Signalable
     [SerializeField] bool opened = false;
     [SerializeField] float wallLength = 2f;
     [SerializeField] ActionType actionType = ActionType.MOVING;
+    [SerializeField] SpriteRenderer rend;
 
     GameObject wall;
 
@@ -27,15 +28,15 @@ public class Wall : Signalable
     {
         wall = transform.GetChild(0).gameObject;
 
-        wall.transform.localScale = new Vector3(wall.transform.localScale.x, wallLength, wall.transform.localScale.z);
+        rend.size = new Vector2(1, wallLength);
 
         if (opened)
         {
-            Open();
+            wall.transform.localPosition = new Vector3(0, wallLength / 2,0);
         }
         else
         {
-            Close();
+            wall.transform.localPosition = new Vector3(0, -wallLength / 2, 0);
         }
     }
 
@@ -44,10 +45,10 @@ public class Wall : Signalable
         switch (actionType)
         {
             case ActionType.MOVING:
-                wall.transform.DOLocalMoveY(0, openingSpeed);
+                wall.transform.DOLocalMoveY(wallLength / 2, openingSpeed) ;
                 break;
             case ActionType.SCALING:
-                wall.transform.DOScaleY(wallLength, openingSpeed);
+                wall.transform.DOScaleY(1, openingSpeed);
                 break;
         }
     }
@@ -57,7 +58,7 @@ public class Wall : Signalable
         switch (actionType)
         {
             case ActionType.MOVING:
-                wall.transform.DOLocalMoveY(-wallLength, openingSpeed);
+                wall.transform.DOLocalMoveY(-wallLength / 2, openingSpeed);
                 break;
             case ActionType.SCALING:
                 wall.transform.DOScaleY(0, openingSpeed);
