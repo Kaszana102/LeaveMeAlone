@@ -22,7 +22,7 @@ public class CharacterControler : MonoBehaviour
 
     int wallOnRight;
 
-    enum States
+    public enum States
     {
         ground,
         jumping,
@@ -155,13 +155,14 @@ public class CharacterControler : MonoBehaviour
     {
         if (_ctrlTimer <= 0)
         {
-            if (Mathf.Abs(rb.velocity.x) < 0.01f)
+            if (Mathf.Abs(rb.velocity.x) < 0.05f)
                 rb.velocity = new Vector2(0, rb.velocity.y);
+
             else if (state == States.ground)
-                rb.AddForce(Vector2.right * -Mathf.Sign(rb.velocity.x) * runGroundDecc);
+                rb.AddForce(Vector2.right * -Mathf.Sign(rb.velocity.x) * Mathf.Min(runGroundDecc, Mathf.Abs(rb.velocity.x)));
             else
             {
-                rb.AddForce(Vector2.right * -Mathf.Sign(rb.velocity.x) * runAirDecc);
+                rb.AddForce(Vector2.right * -Mathf.Sign(rb.velocity.x) * Mathf.Min(runAirDecc, Mathf.Abs(rb.velocity.x)));
             }
         }
     }
@@ -197,4 +198,8 @@ public class CharacterControler : MonoBehaviour
                 state = States.falling;
         }
     }
+
+    public States GetState() => state;
+
+    public int IsWallOnRight() => wallOnRight;
 }
