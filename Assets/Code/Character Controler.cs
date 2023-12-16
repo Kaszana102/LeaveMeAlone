@@ -15,6 +15,7 @@ public class CharacterControler : MonoBehaviour
         coyoteTime, jumpBufferTime, wallCtrlLoss;   //times of coyote time, jump buffering and lost control after wall jump
 
     private Rigidbody2D rb;
+    private CharacterAudio audioSource;
 
     float 
         _coyoteTimer, _jumpBufferTimer, _ctrlTimer,
@@ -36,6 +37,7 @@ public class CharacterControler : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<CharacterAudio>();
     }
 
     // Update is called once per frame
@@ -45,8 +47,11 @@ public class CharacterControler : MonoBehaviour
         RaycastHit2D hitFloor = Physics2D.Raycast(rb.position + Vector2.down * (collRadius + 0.001f),
             Vector2.down, floorCheckLength);
         if (state != States.ground && state != States.jumping && hitFloor)
+        {
             state = States.ground;
-        else if (state==States.ground && !hitFloor)
+            audioSource.PlayLandingSound();
+        }
+        else if (state == States.ground && !hitFloor)
         {
             state = States.falling;
             _coyoteTimer = coyoteTime;
@@ -136,6 +141,7 @@ public class CharacterControler : MonoBehaviour
 
             if (state == States.ground)
             {
+                audioSource.PlayRunSound();
                 if (right == (rb.velocity.x > 0))
                     rb.AddForce(Vector2.right * dir * runGroundAcc);
                 else
@@ -175,6 +181,7 @@ public class CharacterControler : MonoBehaviour
                 _jumpBufferTimer = jumpBufferTime;
             else if (state == States.wall)
             {
+                audioSource.PlayJumpSound();
                 rb.velocity = new Vector2(rb.velocity.x, 0);
                 rb.AddForce(Vector2.up * wallJmpUp + Vector2.right * wallOnRight * wallJmpHor, ForceMode2D.Impulse);
                 _ctrlTimer = wallCtrlLoss;
@@ -182,6 +189,7 @@ public class CharacterControler : MonoBehaviour
             }
             else
             {
+                audioSource.PlayJumpSound();
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 _coyoteTimer = 0;
                 _jumpBufferTimer = 0;
