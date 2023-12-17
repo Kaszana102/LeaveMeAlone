@@ -66,11 +66,15 @@ public class CharacterControler : MonoBehaviour
                 Vector2.left, floorCheckLength);
             if (hitWallLeft)
             {
+                if (state != States.wall)
+                    audioSource.PlayLandingSound();
                 state = States.wall;
                 wallOnRight = 1;
             }
             else if (hitWallRight)
             {
+                if(state != States.wall)
+                    audioSource.PlayLandingSound();
                 state = States.wall;
                 wallOnRight = -1;
             }

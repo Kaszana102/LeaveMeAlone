@@ -20,6 +20,9 @@ public class Wall : Signalable
     GameObject wall;
     AudioSource audio;
     [SerializeField] AudioClip openSound, closeSound;
+
+    float pitchVariance = 0.15f;
+
     public override void ReceiveSignal()
     {
         ChangeOpeness();
@@ -75,6 +78,7 @@ public class Wall : Signalable
     void ChangeOpeness()
     {
         opened = !opened;
+        audio.pitch = Random.Range(1 - pitchVariance, 1 + pitchVariance);
         if (opened)
         {
             audio.PlayOneShot(openSound, 0.2f);

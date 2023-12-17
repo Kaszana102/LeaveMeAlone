@@ -544,29 +544,13 @@ PrefabInstance:
       propertyPath: m_DynamicOccludee
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8404592888937581542, guid: 6c59ce6d6cab2a244beec49b48341d27, type: 3}
-      propertyPath: rayLength
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8404592888937581542, guid: 6c59ce6d6cab2a244beec49b48341d27, type: 3}
-      propertyPath: raysNumber
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8404592888937581542, guid: 6c59ce6d6cab2a244beec49b48341d27, type: 3}
-      propertyPath: groundRayLength
-      value: 0.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 8404592888937581542, guid: 6c59ce6d6cab2a244beec49b48341d27, type: 3}
-      propertyPath: wallCheckRayLength
-      value: 8
+    - target: {fileID: 8155503232136947937, guid: 6c59ce6d6cab2a244beec49b48341d27, type: 3}
+      propertyPath: m_Creator
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8866560052311242561, guid: 6c59ce6d6cab2a244beec49b48341d27, type: 3}
       propertyPath: m_Name
       value: Aloner
-      objectReference: {fileID: 0}
-    - target: {fileID: 9100843274434471081, guid: 6c59ce6d6cab2a244beec49b48341d27, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -687,10 +671,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 115445629138581154, guid: d12a4c4ab91a82144a657c5a192fd713, type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1495552310615301568, guid: d12a4c4ab91a82144a657c5a192fd713, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.5
@@ -735,17 +715,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2078514306745786546, guid: d12a4c4ab91a82144a657c5a192fd713, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.1599994
-      objectReference: {fileID: 0}
     - target: {fileID: 3340551409140309019, guid: d12a4c4ab91a82144a657c5a192fd713, type: 3}
       propertyPath: m_Creator
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8248393124812653096, guid: d12a4c4ab91a82144a657c5a192fd713, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.1599994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

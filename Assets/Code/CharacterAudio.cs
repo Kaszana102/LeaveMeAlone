@@ -7,6 +7,9 @@ public class CharacterAudio : MonoBehaviour
     [SerializeField]
     AudioClip jump, run, landing;
     AudioSource jumpAudio,runAudio,landingAudio;
+    [SerializeField] ParticleSystem landParticle;
+
+    float pitchVariance = 0.15f;
 
     int runAudioCounter = 0;
 
@@ -47,14 +50,16 @@ public class CharacterAudio : MonoBehaviour
     }
 
     public void PlayJumpSound()
-    {        
+    {
+        jumpAudio.pitch = Random.Range(1 - pitchVariance, 1 + pitchVariance);
         jumpAudio.Play();
     }
 
     public void PlayRunSound()
     {
         if(runAudioCounter == 0)
-        {            
+        {
+            runAudio.pitch = Random.Range(1 - pitchVariance, 1 + pitchVariance);
             runAudio.time = Random.Range(0,run.length);
             runAudio.Play();
         }
@@ -67,6 +72,8 @@ public class CharacterAudio : MonoBehaviour
 
     public void PlayLandingSound()
     {
+        landingAudio.pitch = Random.Range(1 - pitchVariance, 1 + pitchVariance);
         landingAudio.Play();
+        landParticle.Play();
     }
 }
