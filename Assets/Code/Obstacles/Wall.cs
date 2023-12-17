@@ -13,7 +13,7 @@ public class Wall : Signalable
 
     [SerializeField] float openingSpeed = 0.25f;
     [SerializeField] bool opened = false;
-    [SerializeField] float wallLength = 2f;
+    public float wallLength = 2f;
     [SerializeField] ActionType actionType = ActionType.MOVING;
     [SerializeField] SpriteRenderer rend;
 

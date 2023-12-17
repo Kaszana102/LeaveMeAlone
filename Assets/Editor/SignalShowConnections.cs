@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(SignalSource))]
+[CanEditMultipleObjects]
 public class SignalShowConnections : Editor
 {
     void OnSceneGUI()
